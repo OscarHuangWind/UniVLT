@@ -21,7 +21,7 @@ Nanyang Technological University
 
 | Architecture | Demo |
 |--------------|------|
-| <img src="asset/teaser.png" width="700"/> | <img src="asset/demo.gif" width="700"/> |
+| <img src="asset/teaser.png" width="420"/> | <img src="asset/demo.gif" width="420"/> |
 
 </div>
 

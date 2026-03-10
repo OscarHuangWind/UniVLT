@@ -2,21 +2,16 @@
 
 # Toward Open-Ended City-scale Traffic Dataset and A Unified Vision-Language-Transportation Model (UniVLT)
 
-**Wenhui Huang, Songyan Zhang, Collister Chua, Yang Liang, Zhiqi Mao, Chen Lv\***  
-Nanyang Technological University  
+**Wenhui Huang¹, Songyan Zhang², Collister Chua², Yang Liang³, Zhiqi Mao², Heng Yang¹, Chen Lv²\***  
+¹ Harvard University  
+² Nanyang Technological University  
+³ Wuhan University of Technology
 
 \* Corresponding author  
 
 </div>
 
 ---
-<!-- † -->
-<!-- <div align="center">
-  <img src="asset/teaser.png" width="900"/>
-</div>
-<div align="center">
-  <img src="asset/demo.gif" width="900"/>
-</div> -->
 <div align="center">
 
 | Architecture | Demo |
@@ -90,13 +85,32 @@ To ensure annotation fidelity and reduce hallucination:
 
 ## 📦 Dataset Access
 
+Please create your own `data/` directory in the project root and download the required datasets from Hugging Face.
+
+1. Download Datasets
+
 The LTD dataset is available on Huggingface:
 
-👉 **TO_DO**
+👉 https://huggingface.co/datasets/Oscar-Huang/LTD
 
-LingoQA, Omnidrive and CODA are also available on Huggingface:
+LingoQA, Omnidrive and CODA QA jsons are also available on Huggingface:
 
-👉 **TO_DO**
+👉 https://huggingface.co/datasets/Oscar-Huang/AD_Json
+
+[LingoQA](https://github.com/wayveai/LingoQA), [Omnidrive](https://github.com/NVlabs/OmniDrive) and [CODA](https://coda-dataset.github.io/download.html#link) images are available on their respective official websites.
+
+Download the corresponding datasets and place them inside the `data/` directory.
+
+2. Expected Directory Structure
+```
+data/
+├── CODA/
+├── LingoQA/
+├── LTD/
+├── NuScenes/
+├── Omnidrive/
+├── images_w_boxes/
+```
 
 ---
 

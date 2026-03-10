@@ -2,10 +2,9 @@
 
 # Toward Open-Ended City-scale Traffic Dataset and A Unified Vision-Language-Transportation Model (UniVLT)
 
-**Wenhui Huang¹, Songyan Zhang², Collister Chua², Yang Liang³, Zhiqi Mao², Heng Yang¹, Chen Lv²\***  
+**Wenhui Huang¹, Songyan Zhang², Collister Chua², Yang Liang², Zhiqi Mao², Heng Yang¹, Chen Lv²\***  
 ¹ Harvard University  
 ² Nanyang Technological University  
-³ Wuhan University of Technology
 
 \* Corresponding author  
 

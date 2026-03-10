@@ -117,7 +117,7 @@ data/
 
 | Model | Backbone | Stage | Link |
 |--------|----------|--------|--------|
-| UniVLT-7B | Qwen2.5-VL-7B-Instruct | Stage 2 | https://huggingface.co/c-chua/UniVLT |
+| UniVLT-7B | Qwen2.5-VL-7B-Instruct | FT Stage 2 | https://huggingface.co/c-chua/UniVLT |
 
 Backbone model: 
 [Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct)
@@ -193,22 +193,33 @@ For LTD-specific metrics:
 python calculate_accuracy.py
 python compute_f1_score.py
 ```
+# 🎯 Benchmark Results
+We evaluate **UniVLT** against both **general-purpose open-source vision-language models (VLMs)** and **autonomous-driving–specialized models** across multiple public benchmarks.  
+These benchmarks assess the model's ability to perform **risk reasoning, perception grounding, scene understanding, and driving-related decision support**.
 
-# 📈 Main Results on LTD Benchmark
+**Notation**
+- **Bold** → Best result
+- <u>Underline</u> → Second-best result
+- ↑ indicates **higher values are better**
 
-We compare UniVLT against general-purpose open-source VLMs and autonomous-driving–tailored models on three tasks:
+---
+# 📈 Results on LTD Benchmark
 
-- Multi-Image Risk Analysis (GPT-Score ↑)
-- Camera ID Selection (Accuracy ↑)
-- Multi-Object Grounding (F1 Score ↑)
+The **LTD benchmark** evaluates multi-image reasoning and perception capabilities for autonomous driving scenarios.
+
+We report results on three tasks:
+
+- **Multi-Image Risk Analysis** *(GPT-Score)*
+- **Camera ID Selection** *(Accuracy)*
+- **Multi-Object Grounding** *(F1 Score)*
 
 | Model | Size | GPT-Score ↑ | Accuracy ↑ | Grounding F1 ↑ |
 |--------|------|-------------|------------|----------------|
 | LLaVA-OV | 0.5B | 0.01 | 0.29 | 0.00 |
 | LLaVA-OV | 7B | 0.03 | 0.32 | 0.00 |
-| Qwen2.5-VL | 7B | 0.46 | 0.48 | 0.45 |
+| Qwen2.5-VL | 7B | <u>0.46</u> | <u>0.48</u> | 0.45 |
 | InternVL2.5 | 8B | 0.25 | 0.23 | 0.00 |
-| Qwen3-VL | 4B | 0.14 | 0.25 | 0.62 |
+| Qwen3-VL | 4B | 0.14 | 0.25 | <u>0.62</u> |
 | --- | --- | --- | --- | --- |
 | OpenEMMA | 3B | 0.10 | 0.29 | 0.44 |
 | WiseAD | 1.7B | 0.00 | 0.00 | N/A |
@@ -218,7 +229,76 @@ We compare UniVLT against general-purpose open-source VLMs and autonomous-drivin
 | **UniVLT (Ours)** | **7B** | **0.66** | **0.66** | **0.64** |
 
 **Grounding evaluation protocol.**  
-We report grounding results only for models that produce normalized bounding box coordinates or whose outputs can be converted to a thousandth-level normalized scale.
+Grounding results are reported only for models that produce **normalized bounding box coordinates**, or whose outputs can be converted to a **thousandth-level normalized scale**.
+
+---
+
+# 📈 Results on LingoQA Benchmark
+
+The **LingoQA benchmark** evaluates **language-driven reasoning for driving scenarios**, requiring models to interpret scene context and answer complex driving-related questions.
+
+| Model | Size | Lingo-Judge ↑ |
+|--------|------|-------------|
+| LLaVA-OV | 0.5B | 34.2% |
+| LLaVA-OV | 7B | 54.2% |
+| Qwen2.5-VL | 7B | 62.2% |
+| InternVL2.5 | 8B | 47.2% |
+| Qwen3-VL | 4B | 37.0% |
+| --- | --- | --- |
+| OpenEMMA | 3B | 48.0% |
+| WiseAD | 1.7B | 60.4% |
+| RoboTron-Drive | 8B | 59.2% |
+| ReCogDrive | 8B | <u>67.8%</u> |
+| --- | --- | --- |
+| **UniVLT (Ours)** | **7B** | **69.0%** |
+
+---
+
+# 📈 Results on OmniDrive Benchmark
+
+The **OmniDrive benchmark** evaluates general **driving scene understanding and reasoning capabilities**.
+
+| Model | Size | GPT-Score ↑ |
+|--------|------|-------------|
+| LLaVA-OV | 0.5B | 0.09 |
+| LLaVA-OV | 7B | 0.72 |
+| Qwen2.5-VL | 7B | 0.80 |
+| InternVL2.5 | 8B | <u>0.84</u> |
+| Qwen3-VL | 4B | 0.80 |
+| --- | --- | --- |
+| OpenEMMA | 3B | 0.75 |
+| WiseAD | 1.7B | 0.59 |
+| RoboTron-Drive | 8B | 0.83 |
+| ReCogDrive | 8B | 0.79 |
+| --- | --- | --- |
+| **UniVLT (Ours)** | **7B** | **0.87** |
+
+---
+
+# 📈 Results on CODA-LM Benchmark
+
+The **CODA-LM benchmark** evaluates perception and reasoning capabilities in driving environments across three tasks:
+
+- **Region Perception** — understanding localized scene elements  
+- **General Perception** — holistic scene understanding  
+- **Driving Suggestion** — generating safe driving decisions
+
+| Model | Size | Region Perception ↑ | General Perception ↑ | Driving Suggestion ↑ | Average ↑ |
+|--------|------|-------------|------------|----------------|-----------|
+| LLaVA-OV | 0.5B | 1.93 | 1.11 | 1.57 | 1.54 |
+| LLaVA-OV | 7B | 3.06 | 1.33 | 2.68 | 2.36 |
+| Qwen2.5-VL | 7B | 5.07 | 4.37 | 5.20 | 4.88 |
+| InternVL2.5 | 8B | 6.04 | 3.91 | 5.22 | 5.06 |
+| Qwen3-VL | 4B | 6.92 | 4.54 | **6.08** | 5.85 |
+| --- | --- | --- | --- | --- | --- |
+| OpenEMMA | 3B | 5.52 | 3.76 | 5.04 | 4.77 |
+| WiseAD | 1.7B | 1.81 | 1.27 | 1.09 | 1.39 |
+| RoboTron-Drive | 8B | **7.66** | <u>5.15</u> | <u>5.68</u> | **6.16** |
+| ReCogDrive | 8B | 0.29 | 0.32 | N/A | 0.00 |
+| --- | --- | --- | --- | --- | --- |
+| **UniVLT (Ours)** | **7B** | <u>7.25</u> | **5.18** | 5.62 | <u>6.02</u> |
+
+---
 
 # 🔍 Reproducibility
 - All experiments conducted with fixed random seeds.

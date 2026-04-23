@@ -1,9 +1,9 @@
 <div align="center">
 
-# Toward Open-Ended City-scale Traffic Dataset and A Unified Vision-Language-Transportation Model (UniVLT)
+# Towards Safe Mobility: A Unified Transportation Foundation Model enabled by  Open-Ended Vision–Language Dataset (UniVLT)
 
 **Wenhui Huang¹², Songyan Zhang¹, Collister Chua¹, Yang Liang¹, Zhiqi Mao¹, Heng Yang², Chen Lv¹\***  
-¹ Nanyang Technological University  
+¹ Nanyang Technological University 
 ² Harvard University  
 
 \* Corresponding author  

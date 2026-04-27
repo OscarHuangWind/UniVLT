@@ -8,6 +8,10 @@
 
 \* Corresponding author  
 
+[![arXiv](https://img.shields.io/badge/arXiv-2604.22260-b31b1b.svg)](https://arxiv.org/abs/2604.22260)
+[![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://huggingface.co/datasets/Oscar-Huang/LTD)
+[![Model](https://img.shields.io/badge/🤗-Model-red)](https://huggingface.co/c-chua/UniVLT)
+
 </div>
 
 ---
@@ -18,14 +22,6 @@
 | <img src="asset/teaser.png" width="420"/> | <img src="asset/demo.gif" width="420"/> |
 
 </div>
-
-## 📄 Paper
-
-**arXiv preprint:** (Link will be updated upon release)
-
-If you find our work useful, please consider citing us (see Citation section).
-
----
 
 ## 🔥 Highlights
 
@@ -321,10 +317,13 @@ This project builds upon:
 
 # 📚 Citation
 ```
-@article{huang2026univlt,
-  title={Toward Open-Ended City-scale Traffic Dataset and A Unified Vision-Language-Transportation Model},
-  author={Huang, Wenhui and Zhang, Songyan and Chua, Collister and Liang, Yang and Mao, Zhiqi and Lv, Chen},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2026}
+@misc{huang2026univlt,
+      title={Towards Safe Mobility: A Unified Transportation Foundation Model enabled by Open-Ended Vision-Language Dataset}, 
+      author={Wenhui Huang and Songyan Zhang and Collister Chua and Yang Liang and Zhiqi Mao and Heng Yang and Chen Lv},
+      year={2026},
+      eprint={2604.22260},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2604.22260}, 
 }
 ```

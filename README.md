@@ -10,7 +10,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2604.22260-b31b1b.svg)](https://arxiv.org/abs/2604.22260)
 [![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://huggingface.co/datasets/Oscar-Huang/LTD)
-[![Model](https://img.shields.io/badge/🤗-Model-red)](https://huggingface.co/c-chua/UniVLT)
+[![Model](https://img.shields.io/badge/🤗-Model-red)](https://huggingface.co/Oscar-Huang/UniVLT)
 
 </div>
 
